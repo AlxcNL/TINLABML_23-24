@@ -52,3 +52,27 @@ A | Y = NOT(A)
 ---|---
 0 | 1
 1 | 0
+
+
+## XOR
+
+```mermaid
+
+flowchart LR
+A --> notA
+B --> notB
+notA -->  notAandB
+B --> notAandB
+A --> AandnotB
+notB --> AandnotB
+notAandB --> F0orF1
+AandnotB --> F0orF1
+```
+
+A | B | NOT A | F0 = (NOT A) AND B | NOT B | F1 = A AND (NOT B) | F0 OR F1
+---|---|---|---|---|---|---
+0 | 0 | 1 | 0 | 1 | 0 | 0 
+0 | 1 | 1 | 1 | 0 | 0 | 1
+1 | 0 | 0 | 0 | 1 | 1 | 1
+1 | 1 | 0 | 0 | 0 | 0 | 0
+
