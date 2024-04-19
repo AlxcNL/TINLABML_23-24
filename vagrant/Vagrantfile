@@ -1,0 +1,49 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANT_API_VERSION = "2"
+WORKSPACE = "../"
+
+SERVER_IMAGE_NAME = "AlxcNL/torcs-server"
+SERVER_BOX_VERSION = "0.3"
+SERVER_IP = "192.168.56.20"
+
+Vagrant.configure(VAGRANT_API_VERSION) do |config|
+  config.ssh.insert_key = false
+  config.ssh.forward_agent = true
+  
+  config.vm.define "torcs-server" do |server|
+    server.vm.provider "virtualbox" do |vb|
+      vb.check_guest_additions = false
+      vb.memory = "4096"
+      vb.cpus = 4
+      vb.gui = true
+    end
+      
+    server.vm.box = SERVER_IMAGE_NAME
+    server.vm.box_version = SERVER_BOX_VERSION          
+    server.vm.box_check_update = true
+    server.vm.network "private_network", ip: SERVER_IP
+    server.vm.hostname = "torcs-server"
+    server.vm.synced_folder WORKSPACE, "/vagrant"       
+    
+    # PROVISION
+
+    server.vm.provision "docker",
+      images: ["mysql:8.0.33"]
+
+    # BASH  
+    server.vm.provision "shell", path: "../install/install_python.sh"
+    server.vm.provision "shell", path: "../install/install_ansible.sh"
+    server.vm.provision "shell", path: "../install/install_ansible_plugins.sh"
+
+    # ANSIBLE
+    server.vm.provision "shell", inline: "cd /vagrant/ansible; playbooks/playbook-torcs.yaml"
+    server.vm.provision "shell", inline: "cd /vagrant/ansible; playbooks/playbook-torcs-server.yaml"
+
+    # DOCKER
+    server.vm.provision "shell", inline: "cd /vagrant/mysql; ./start_mysql.sh"
+
+  end    
+
+end
