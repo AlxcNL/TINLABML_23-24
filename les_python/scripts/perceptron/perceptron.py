@@ -8,12 +8,6 @@ logging.basicConfig(level=logging.DEBUG)
 # class Perceptron objecten kunt maken
 # Zie test_perceptron.py voor testcases
 
-# BONUS OPDRACHT
-# Voeg de methode display toe om de perceptron te visualiseren
-# kijk in perceptron.dot hoe je dat met de graphviz library
-# kunt doen
-
-
 class Perceptron:
 
     """
