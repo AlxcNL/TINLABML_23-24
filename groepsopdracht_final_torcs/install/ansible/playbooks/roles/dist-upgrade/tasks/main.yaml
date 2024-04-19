@@ -1,0 +1,19 @@
+---
+- name: Upgrade the OS (apt-get dist-upgrade)
+  become: True
+  become_method: sudo
+  apt:
+    autoremove: yes
+    upgrade: dist
+    autoclean: yes
+  when:
+    ansible_distribution in ("Ubuntu", "Linux Mint", "Pop!_OS")
+
+- name: Upgrade all dnf packages
+  become: True
+  become_method: sudo
+  ansible.builtin.dnf:
+    name: "*"
+    state: latest
+  when:
+    ansible_distribution in ("Fedora")
