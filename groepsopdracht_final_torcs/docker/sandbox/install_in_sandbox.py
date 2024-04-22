@@ -3,12 +3,15 @@
 from pathlib import PurePosixPath
 import docker
 import logging
+import sys
 
 # Global configuration
 
 logging.basicConfig(level=logging.INFO)
 containerName = "sandbox"
-script = PurePosixPath("/tmp/install_nushell.sh")
+script = sys.argv[1]
+script = PurePosixPath(script)
+print(f"script : {script}")
 
 def main():
     logging.info(f"Install in container {containerName}")
