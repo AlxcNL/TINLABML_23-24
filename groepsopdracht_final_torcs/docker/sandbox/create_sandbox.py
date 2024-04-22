@@ -14,7 +14,7 @@ logging.basicConfig(level=logging.INFO)
 imageName = "sandbox"
 imageTag = "0.1"
 baseImageName = "linuxserver/webtop"
-baseImageTag = "debian-xfce"
+baseImageTag = "ubuntu-mate"
 baseImage = f"{baseImageName}:{baseImageTag}"
 
 scriptPath = PurePosixPath("/tmp")
@@ -38,32 +38,32 @@ def createDockerImage(targetImage, buildProperties=None):
 
 
 def main():
-    logging.info("Read studentnumber")
+    # logging.info("Read studentnumber")
 
-    studentNumber = "student"
-    # studentNumber = readStudentInfo()   
-    logging.debug(f"studentnumber : {studentNumber}")
+    # studentNumber = "student"
+    # # studentNumber = readStudentInfo()   
+    # logging.debug(f"studentnumber : {studentNumber}")
 
-    containerHomeDir = PurePosixPath( f"/home/{studentNumber}" )
-    hostDir = Path(baseImageTag)
-    hostHomeDir = hostDir.joinpath(studentNumber)
+    # containerHomeDir = PurePosixPath( f"/home/{studentNumber}" )
+    # hostDir = Path(baseImageTag)
+    # hostHomeDir = hostDir.joinpath(studentNumber)
     scriptsDir = Path("install_scripts")
 
-    logging.info("Create directories")
-    createDirs(hostDir, hostHomeDir)
+    # logging.info("Create directories")
+    # createDirs(hostDir, hostHomeDir)
 
-    logging.info("Create cofiguration files")
-    envFile = hostHomeDir.joinpath(".env")
+    # logging.info("Create cofiguration files")
+    # envFile = hostHomeDir.joinpath(".env")
 
-    shutil.copy(
-        Path("skel/.bashrc"),
-        hostHomeDir.joinpath(".bashrc")        
-    )
+    # shutil.copy(
+    #     Path("skel/.bashrc"),
+    #     hostHomeDir.joinpath(".bashrc")        
+    # )
 
-    shutil.copy(
-        Path("skel/.bash_aliases"),
-        hostHomeDir.joinpath(".bash_aliases")        
-    )
+    # shutil.copy(
+    #     Path("skel/.bash_aliases"),
+    #     hostHomeDir.joinpath(".bash_aliases")        
+    # )
 
     # targetImage = f"{studentNumber}/{imageName}:{imageTag}"
     # logging.debug(f"targetImage : {targetImage}")
@@ -78,17 +78,17 @@ def main():
 
     # Consider the environment
     envProperties = Properties(
-        Property( "CUSTOM_USER", studentNumber, sep='=' ),
-        Property( "FM_HOME", containerHomeDir, sep='='),
+        # Property( "CUSTOM_USER", studentNumber, sep='=' ),
+        # Property( "FM_HOME", containerHomeDir, sep='='),
         Property( "PUID", 1000, sep='=' ),
         Property( "PGID", 1000, sep='=' ),
         Property( "TZ", "Europe/Amsterdam", sep='=' ),
         Property( "TITLE", "Linux Sandbox Environment", sep='=' )
     )
     
-    logging.debug( f"envProperties envList : {envProperties.toEnvList()}" )    
-    logging.info( f"Create {envFile}" )
-    envProperties.toEnvFile(envFile)
+    # logging.debug( f"envProperties envList : {envProperties.toEnvList()}" )    
+    # logging.info( f"Create {envFile}" )
+    # envProperties.toEnvFile(envFile)
 
     # NEW
     targetImage = baseImage
@@ -99,10 +99,10 @@ def main():
     createProperties = Properties(
         Argument( 3000, 3000, sep=':', flag=Flag('p') ),
         Property("--restart", "unless-stopped"),
-        Property( Flag("env-file"), envFile.absolute()),
+        # Property( Flag("env-file"), envFile.absolute()),
         Property( "--shm-size", "2gb", sep='=' ),
-        docker.VolumeMapping( hostHomeDir.absolute(), containerHomeDir )
-        # docker.VolumeMapping( scriptsDir.absolute(), scriptPath ),
+        # docker.VolumeMapping( hostHomeDir.absolute(), containerHomeDir ),
+        docker.VolumeMapping( scriptsDir.absolute(), scriptPath )
         # docker.VolumeMapping( Path("skel").absolute(), PurePosixPath("/etc/skel") )
     )        
 
