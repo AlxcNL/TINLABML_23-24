@@ -1,0 +1,13 @@
+#!/usr/bin/env ansible-playbook
+---
+- hosts: localhost
+  connection: local
+  become: False
+  gather_facts: True
+  roles:
+    - plib
+    - opengl 
+    - torcs-scr
+    # - docker
+    # - docker-compose
+    # - portainer

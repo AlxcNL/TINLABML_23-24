@@ -13,7 +13,8 @@ container="ubuntu-torcs"
   -e TITLE="TINLAB Torcs Server" \
   -p 3000:3000 \
   -p 3001:3001 \
-  -v $PWD/install:/config \
+  -v $PWD/config:/config \
+  -v $PWD/install:/tmp \
   --restart unless-stopped \
   lscr.io/linuxserver/webtop:ubuntu-mate
 

@@ -12,7 +12,7 @@ echo "Install software-properties-common"
 apt install software-properties-common 
 
 echo "Reinstall ca-certificates"
-apt-get install --reinstall ca-certificates 
+apt-get install -y --reinstall ca-certificates 
 
 # TODO
 # https://stackoverflow.com/questions/68992799/warning-apt-key-is-deprecated-manage-keyring-files-in-trusted-gpg-d-instead
