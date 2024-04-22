@@ -42,5 +42,5 @@
 - name: make datainstall torcs-server
   become: True
   community.general.make:
-    chdir: /home/{{ ansible_user_id }}/torcs
+    chdir: "{{ ansible_env.HOME }}/torcs"
     target: datainstall
