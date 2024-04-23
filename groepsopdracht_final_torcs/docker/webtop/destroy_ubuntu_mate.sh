@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Author: J.A.Boogaard@hr.nl
 
-runtime="$runtime"
+runtime="docker"
 container="ubuntu-torcs"
 
 if [[ -n $($runtime ps | grep torcs) ]]; then

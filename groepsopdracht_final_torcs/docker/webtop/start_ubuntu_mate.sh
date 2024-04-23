@@ -2,7 +2,7 @@
 # Author: J.A.Boogaard@hr.nl
 
 container="ubuntu-torcs"
-runtime="$runtime"
+runtime="docker"
 
 ./stop_ubuntu_mate.sh || true
 

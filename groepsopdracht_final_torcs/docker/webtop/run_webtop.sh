@@ -2,7 +2,7 @@
 
 # Author: J.A.Boogaard@hr.nl
 
-runtime="$runtime"
+runtime="docker"
 
 $runtime run -d \
   --name=webtop \
