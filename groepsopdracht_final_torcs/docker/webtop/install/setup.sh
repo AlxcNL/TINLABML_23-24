@@ -33,4 +33,5 @@ fi
 (
     cd playbooks;
     ./playbook-torcs.yaml;
+    ./playbook-torcs-server.yaml;
 )

@@ -3,6 +3,6 @@
 
 container="ubuntu-torcs"
 
-if [[ -n $(podman ps | grep torcs) ]]; then
-    podman container stop $container
+if [[ -n $(docker ps | grep torcs) ]]; then
+    docker container stop $container
 fi  

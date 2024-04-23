@@ -2,7 +2,9 @@
 
 # Author: J.A.Boogaard@hr.nl
 
-docker run -d \
+runtime="$runtime"
+
+$runtime run -d \
   --name=webtop \
   -e PUID=1000 \
   -e PGID=1000 \

@@ -2,10 +2,11 @@
 # Author: J.A.Boogaard@hr.nl
 
 container="ubuntu-torcs"
+runtime="$runtime"
 
 ./stop_ubuntu_mate.sh || true
 
- podman run -d \
+ $runtime run -d \
   --name=$container \
   -e PUID=1000 \
   -e PGID=1000 \

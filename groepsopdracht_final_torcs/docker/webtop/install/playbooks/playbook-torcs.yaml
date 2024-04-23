@@ -5,7 +5,7 @@
   become: False
   gather_facts: True
   roles:
-    - time-and-locale
+    # - time-and-locale
     - commands
     - gcc
     - zip

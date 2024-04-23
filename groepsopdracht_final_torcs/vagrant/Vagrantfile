@@ -27,7 +27,8 @@ Vagrant.configure(VAGRANT_API_VERSION) do |config|
     server.vm.box_check_update = true      
     server.vm.network "private_network", ip: SERVER_IP
     server.vm.hostname = "torcs-server"
-    server.vm.synced_folder WORKSPACE, "/vagrant"       
+    server.vm.synced_folder WORKSPACE, "/vagrant"     
+    server.vm.network "forwarded_port", guest: 3001, host: 3001, protocol: "tcp"
   
     # PROVISION
     server.vm.provision "docker",
