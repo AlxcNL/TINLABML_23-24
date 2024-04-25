@@ -11,14 +11,14 @@ fi
 echo "Install software-properties-common"
 apt install software-properties-common 
 
-echo "Reinstall ca-certificates"
-apt-get install -y --reinstall ca-certificates 
+#echo "Reinstall ca-certificates"
+3apt-get install -y --reinstall ca-certificates 
 
 # TODO
 # https://stackoverflow.com/questions/68992799/warning-apt-key-is-deprecated-manage-keyring-files-in-trusted-gpg-d-instead
 
-echo "Sign"
-apt-key adv --keyserver "hkp://keyserver.ubuntu.com:80" --recv "F23C5A6CF475977595C89F51BA6932366A755776"
+#echo "Sign"
+#apt-key adv --keyserver "hkp://keyserver.ubuntu.com:80" --recv "F23C5A6CF475977595C89F51BA6932366A755776"
 
 echo "Add ppa"
 add-apt-repository "deb https://ppa.launchpadcontent.net/deadsnakes/ppa/ubuntu jammy main "
