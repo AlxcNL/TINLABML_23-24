@@ -1,15 +1,8 @@
 # TINLABML_23-24
-Practicum lesmateriaal TinLab ML cohort 2022-2023
 
-## Workspace Setup
+## Development Setup
 
 <ol>
-
-<li>
-
-Git
-
-<ul>
 
 <li>
 
@@ -21,26 +14,13 @@ Make sure you select "Checkout as-is, commit Unix-style line endings" during the
 
 <li>
 
-[Git (Windows)](https://gitforwindows.org/)
+[GitHub CLI](https://cli.github.com/)
 
 </li>
 
 <li>
 
-[Git (Mac)](https://git-scm.com/download/mac)
-
-</li>
-
-<li>
-
-**Install [GitHub CLI](https://cli.github.com/) (MacOS only)**
-
-```bash
-brew install gh
-```
-
-***NOTE***<br>
-Although you could download and install GitHub CLI for Windows, I don't recommend it since it does not properly work in Git Bash.
+(Optional) [Git Bash (Windows)](https://gitforwindows.org/)
 
 </li>
 
@@ -48,41 +28,17 @@ Although you could download and install GitHub CLI for Windows, I don't recommen
 
 <li>
 
-**Setup authentication**
-
-<ul>
-
-<li>
-
-Create a ssh key-pair token
-
-Start a (git) bash shell *and generate a secret key pair with your (own) student email adress
-
-```sh
-ssh-keygen -t Ed25519 -C student@hr.nl
-```
-
-</li>
-
-<li>
-
-**Transfer your <b>public</b> key to Github**
-
-If you installed the GitHub client, you can authenticate with the following command in the terminal and select ssh for authentication
+**Authenticate with GitHub CLI**
 
 ```sh
 gh auth login
 ```
 
-otherwise copy and paste the content of your SSH <u>public</u> key to a [new ssh key in GitHub](https://github.com/settings/ssh/new)
-
 </li>
-
-</ul>
 
 <li>
 
-**Create Repository**
+**Create Git Repository**
 
 <ul>
 
@@ -106,19 +62,9 @@ Browse to <a>github.com</a> and create <u>private</u> repository TINLABML_23-24.
 
 **Clone your git repository**
 
-<p>
-Clone your git repository TINLABML_23-24 from Github to your local workspace</u>
-</p>
-
-</li>
-
-<li>
-
-**Download and copy subfolders of this repository**
-
-<p>
-Download this repository as zip-file and extract files and subdirectories contained in the zip-file to your (own) local git directory TINLABML_23-24.
-</p>
+```bash
+gh clone [Your_GitHub_Name]/TINLABML_23-24
+```
 
 </li>
 
@@ -170,85 +116,20 @@ git push
 
 <li>
 
-Python
-
-<ul>
-
-<li>
-
-Install [python 3.10](https://www.python.org/downloads/release/python-3105/)
-
-</li>
-
-<li>
-
-Create virtual Python environment 
-
-```sh
-python -m venv tinlab
-```
-
-Activate virtual Python environment 
-
-Run the following command and add it to your <i>.bashrc</i> or <i>.zshrc</i> to make it the default
-
-in Windows
-
-```sh
-tinlab/Scripts/activate.bat
-```
-
-in MacOS
-
-```sh
-source tinlab/bin/activate
-```
-
-</li>
-
-<li>
-
-Install Python libraries
-
-```bash
-python -m pip install --upgrade pip --no-cache-dir -r requirements.txt
-```
-
-</li>
-
-</ul>
-
-</li>
-
-<li>
-
-Visual Studio Code (VSCode)
-
-<ul>
-
-<li>
-
 **Install [Visual Studio Code](https://code.visualstudio.com)**
 
 </li>
 
 <li>
 
-**Enable VSCode to be opened from the command line (macOS only)**
+(Optional) Enable VSCode to be opened from the command line
 
-In VSCode, open the Command Palette and type 'shell command' in order to select the Shell command: 
+Open the Command Palette and type 'shell command' in order to select the Shell command: 
 Install 'code' command in PATH
 
-</li>
-
-<li>
-
-**Start vscode with command from current directory**
-
-Start a (git) bash shell and enter directory TINLABML_23-24, from there use the command <i>code</i> to start vscode.
+Start VSCode with a command from current directory
 
 ```sh
-cd TINLABML_23-24
 code .
 ```
 
@@ -256,7 +137,7 @@ code .
 
 <li>
 
-**Install VSCode Extensions**
+(Optional) Install VSCode Extensions
 
 <ul>
 
@@ -306,110 +187,4 @@ code .
 
 </li>
 
-</ul>
-
-</li>
-
-<li>
-
-VirtualBox
-
-<ul>
-
-<li>
-
-Install [VirtualBox](https://www.virtualbox.org/)
-
-</li>
-
-<li>
-
-Install [VirtualBox 7.0.8 Oracle VM VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads?ref=vnxi.net)
-
-</li>
-
-<li>
-
-Install [Vagrant](https://www.vagrantup.com/)
-
-</li>
-
-</ul>
-
-</li>
-
 </ol>
-
-## Torcs
-
-<p>A preinstalled Torcs Environment is available as a [VirtualBox provisioned by Vagrant](https://app.vagrantup.com/AlxcNL/boxes/torcs-server/versions/0.2)</p>
-
-<ol>
-
-<li>
-
-**Spin up a Virtual Ubuntu Desktop Environment**
-
-<p>In <i>opdrachten/groepsopdracht_final_torcs</i> run 
-
-```sh
-./start_vbox.sh
-```
-</p>
-
-</li>
-
-<li>
-
-**Login**
-
-<p>
-
-Enter the Ubuntu Virtual Machine (VM) and login with password <i>vagrant</i><br>
-To <strong>escape</strong> from the VM press 
-<ul>
-
-<li>Right Control Key (Windows)</li>
-
-<li>Left Control Key (MacOS)</li>
-
-</ul>
-
-</p>
-
-</li>
-
-<li>
-
-**Start Torcs Server**
-
-<p>Open a terminal and enter
-
-```sh
-/vagrant/start_server.sh
-```
-
-In the Torcs GUI select 
-<i>Race</i> -> <i>Quick Race</i> -> <i>New Race</i>
-
-</p>
-
-</li>
-
-**Test with Torcs Client**
-
-<p>Open a second terminal(tab) and enter
-
-```sh
-/vagrant/start_client.sh
-```
-
-you will now see an autonomous racing car in the Torcs GUI.
-
-</li>
-
-</ol>
-
-</li>
-
-</ul>

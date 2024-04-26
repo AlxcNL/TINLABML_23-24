@@ -87,6 +87,8 @@ In the Torcs GUI select
 
 </li>
 
+<li>
+
 **Test with Torcs Client**
 
 <p>Open a second terminal(tab) and enter
