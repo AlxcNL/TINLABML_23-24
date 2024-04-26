@@ -17,7 +17,7 @@ Vagrant.configure(VAGRANT_API_VERSION) do |config|
       vb.check_guest_additions = false
       vb.memory = "4096"
       vb.cpus = 4
-      vb.gui = true
+      vb.gui = false
     end
       
     server.vm.box = SERVER_IMAGE_NAME
@@ -27,22 +27,22 @@ Vagrant.configure(VAGRANT_API_VERSION) do |config|
     server.vm.hostname = "torcs-server"
     server.vm.synced_folder WORKSPACE, "/vagrant"       
     
-    # PROVISION
+    # # PROVISION
 
-    server.vm.provision "docker",
-      images: ["mysql:8.0.33"]
+    # server.vm.provision "docker",
+    #   images: ["mysql:8.0.33"]
 
-    # BASH  
-    server.vm.provision "shell", path: "../install/install_python.sh"
-    server.vm.provision "shell", path: "../install/install_ansible.sh"
-    server.vm.provision "shell", path: "../install/install_ansible_plugins.sh"
+    # # BASH  
+    # server.vm.provision "shell", path: "../install/install_python.sh"
+    # server.vm.provision "shell", path: "../install/install_ansible.sh"
+    # server.vm.provision "shell", path: "../install/install_ansible_plugins.sh"
 
-    # ANSIBLE
-    server.vm.provision "shell", inline: "cd /vagrant/ansible; playbooks/playbook-torcs.yaml"
-    server.vm.provision "shell", inline: "cd /vagrant/ansible; playbooks/playbook-torcs-server.yaml"
+    # # ANSIBLE
+    # server.vm.provision "shell", inline: "cd /vagrant/ansible; playbooks/playbook-torcs.yaml"
+    # server.vm.provision "shell", inline: "cd /vagrant/ansible; playbooks/playbook-torcs-server.yaml"
 
-    # DOCKER
-    server.vm.provision "shell", inline: "cd /vagrant/mysql; ./start_mysql.sh"
+    # # DOCKER
+    # server.vm.provision "shell", inline: "cd /vagrant/mysql; ./start_mysql.sh"
 
   end    
 

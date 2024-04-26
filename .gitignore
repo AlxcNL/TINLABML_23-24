@@ -169,3 +169,7 @@ groepsopdracht_final_torcs/docker/webtop/install/cc5Ve4PR.s
 groepsopdracht_final_torcs/docker/webtop/install/ccxERl8N.s
 groepsopdracht_final_torcs/docker/webtop/install/clearsigned.message.*
 .gitignore
+groepsopdracht_final_torcs/vagrant/.vagrant
+vagrant/.vagrant
+groepsopdracht_final_torcs/vagrant/.vagrant
+vagrant/vagrant_setup.pdf
