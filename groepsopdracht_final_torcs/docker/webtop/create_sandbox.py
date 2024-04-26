@@ -103,7 +103,6 @@ def main():
         Property( "--shm-size", "2gb", sep='=' ),
         # docker.VolumeMapping( hostHomeDir.absolute(), containerHomeDir ),
         docker.VolumeMapping( scriptsDir.absolute(), scriptPath )
-        # docker.VolumeMapping( Path("skel").absolute(), PurePosixPath("/etc/skel") )
     )        
 
     sandbox.create(targetImage, createProperties)
@@ -114,7 +113,7 @@ def main():
     # for script in scripts:
     #     logging.info( f"Run {script}" )
     #     sandbox.exec( scriptPath.joinpath(script), detach=False )
-    sandbox.exec( scriptPath.joinpath("setup.sh"), detach=False )
+    # sandbox.exec( scriptPath.joinpath("setup.sh"), detach=False )
 
     # sandbox.exec( scriptPath.joinpath(script), detach=False )
     # sandbox.stop()

@@ -1,37 +1,30 @@
 #!/usr/bin/env bash
 # Author: J.A.Boogaard@hr.nl
 
-(
-    cd scripts;
-    sudo ./upgrade.sh;
-)
-
-sudo apt install -y git wget
+sudo apt-get update \
+&& sudo apt-get install -y git wget python3
 
 if ( ! command -v ansible ); then
     echo "Install Ansible"
     (
-        cd scripts;
-        sudo ./install_python.sh \
-        && ./install_ansible.sh \
-        && ./install_ansible_plugins.sh;
+        # sudo /tmp/scripts/install_python.sh \
+        /tmp/scripts/install_ansible.sh \
+        && /tmp/scripts/install_ansible_plugins.sh;
     )
 fi
 
 if ( ! command -v zsh ); then
     echo "Install zsh"
     (
-        cd scripts;
-        ./install_zsh.sh \
-        && (./install_oh_my_zsh.sh) \
-        && ./install_zsh_autosuggestions.sh \
-        && ./install_zsh_syntax_highlight.sh;
+        /tmp/scripts/install_zsh.sh \
+        && (/tmp/scripts/install_oh_my_zsh.sh) \
+        && /tmp/scripts/install_zsh_autosuggestions.sh \
+        && /tmp/scripts/install_zsh_syntax_highlight.sh;
     )
 
 fi
 
 (
-    cd playbooks;
-    ./playbook-torcs.yaml;
-    ./playbook-torcs-server.yaml;
+    /tmp/playbooks/playbook-torcs.yaml;
+    /tmp/playbooks/playbook-torcs-server.yaml;
 )

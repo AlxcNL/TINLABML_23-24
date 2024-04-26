@@ -16,6 +16,6 @@ $runtime run \
   -p 3001:3001 \
   -v $PWD/config:/config \
   -v $PWD/install:/tmp \
-  -ti --entrypoint=/tmp/upgrade.sh \
+  -ti --entrypoint=/tmp/setup.sh \
   lscr.io/linuxserver/webtop:ubuntu-mate 
   
