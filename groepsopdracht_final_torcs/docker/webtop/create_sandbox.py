@@ -17,7 +17,7 @@ baseImageName = "linuxserver/webtop"
 baseImageTag = "ubuntu-mate"
 baseImage = f"{baseImageName}:{baseImageTag}"
 
-scriptPath = PurePosixPath("/tmp")
+scriptsPath = PurePosixPath("/tmp")
 scripts = [
     "install_tools.sh",
     "upgrade.sh"
@@ -27,6 +27,7 @@ def readStudentInfo():
     return input("Studentnumber : ")
 
 def createDirs(*dirNames):
+
     for dirName in dirNames:
         logging.debug(f"Create directory {dirName.absolute()}")
         dirName.mkdir(parents=True, exist_ok=True)
@@ -41,11 +42,11 @@ def main():
     # logging.info("Read studentnumber")
 
     # studentNumber = "student"
-    # # studentNumber = readStudentInfo()   
+    # studentNumber = readStudentInfo()   
     # logging.debug(f"studentnumber : {studentNumber}")
 
-    # containerHomeDir = PurePosixPath( f"/home/{studentNumber}" )
-    # hostDir = Path(baseImageTag)
+    containerHomeDir = PurePosixPath( f"/home/kasm-user" )
+    hostDir = Path(baseImageTag)
     # hostHomeDir = hostDir.joinpath(studentNumber)
     scriptsDir = Path("install")
 
@@ -55,14 +56,11 @@ def main():
     # logging.info("Create cofiguration files")
     # envFile = hostHomeDir.joinpath(".env")
 
-    # shutil.copy(
-    #     Path("skel/.bashrc"),
-    #     hostHomeDir.joinpath(".bashrc")        
-    # )
+    # shutil.copy( containerHomeDir.joinpath("setup.sh"), scriptsDir.joinpath("setup.sh") )
 
     # shutil.copy(
-    #     Path("skel/.bash_aliases"),
-    #     hostHomeDir.joinpath(".bash_aliases")        
+        # Path("skel/bash_aliases"),
+        # hostHomeDir.joinpath(".bash_aliases")
     # )
 
     # targetImage = f"{studentNumber}/{imageName}:{imageTag}"
@@ -79,7 +77,7 @@ def main():
     # Consider the environment
     envProperties = Properties(
         # Property( "CUSTOM_USER", studentNumber, sep='=' ),
-        # Property( "FM_HOME", containerHomeDir, sep='='),
+        Property( "FM_HOME", containerHomeDir, sep='='),
         Property( "PUID", 1000, sep='=' ),
         Property( "PGID", 1000, sep='=' ),
         Property( "TZ", "Europe/Amsterdam", sep='=' ),
@@ -102,7 +100,7 @@ def main():
         # Property( Flag("env-file"), envFile.absolute()),
         Property( "--shm-size", "2gb", sep='=' ),
         # docker.VolumeMapping( hostHomeDir.absolute(), containerHomeDir ),
-        docker.VolumeMapping( scriptsDir.absolute(), scriptPath )
+        docker.VolumeMapping( scriptsDir.absolute(), containerHomeDir )
     )        
 
     sandbox.create(targetImage, createProperties)
@@ -113,7 +111,7 @@ def main():
     # for script in scripts:
     #     logging.info( f"Run {script}" )
     #     sandbox.exec( scriptPath.joinpath(script), detach=False )
-    # sandbox.exec( scriptPath.joinpath("setup.sh"), detach=False )
+    sandbox.exec( containerHomeDir.joinpath("setup.sh"), detach=False )
 
     # sandbox.exec( scriptPath.joinpath(script), detach=False )
     # sandbox.stop()
