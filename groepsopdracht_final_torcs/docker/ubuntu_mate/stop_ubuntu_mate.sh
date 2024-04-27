@@ -3,6 +3,6 @@
 
 container="ubuntu-torcs"
 
-if [[ -n $(docker ps | grep torcs) ]]; then
+if [[ -n $(docker ps | grep $container) ]]; then
     docker container stop $container
-fi  
+fi

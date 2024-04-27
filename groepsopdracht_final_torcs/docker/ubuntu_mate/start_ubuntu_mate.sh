@@ -4,9 +4,9 @@
 container="ubuntu-torcs"
 runtime="docker"
 
-./destroy_ubuntu_mate.sh || true
+./stop_ubuntu_mate.sh || true
 
-$runtime run \
+ $runtime container start -it \
   --name=$container \
   -e PUID=1000 \
   -e PGID=1000 \
@@ -15,7 +15,8 @@ $runtime run \
   -p 3000:3000 \
   -p 3001:3001 \
   -v $PWD/config:/config \
-  -v $PWD/install:/tmp \
-  -ti --entrypoint=/tmp/setup.sh \
-  lscr.io/linuxserver/webtop:ubuntu-mate 
-  
+  -v $PWD/install:/home/kasm-user \
+  lscr.io/linuxserver/webtop:ubuntu-mate
+
+sleep 4;
+python3 -m webbrowser http://localhost:3000/

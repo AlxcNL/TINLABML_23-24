@@ -1,0 +1,10 @@
+#!/usr/bin/env ansible-playbook
+---
+- hosts: localhost
+  connection: local
+  become: False
+  gather_facts: True
+  roles:
+   - python
+   - node
+   - torcs-agents
