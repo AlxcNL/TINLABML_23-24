@@ -35,5 +35,6 @@ echo "Make python 3.10 default"
 ln -s /usr/bin/python3.10 /usr/bin/python
 
 echo "Install pip and pipx"
+apt install -y python3-full \
 apt install -y python3-pip \
 && pip install pipx
