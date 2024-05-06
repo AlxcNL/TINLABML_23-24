@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 # Author: J.A.Boogaard@hr.nl
 
-apt --fix-broken install -y 2> /dev/null \
-&& apt autoremove -y 2> /dev/null \
-&& apt autoclean -y 2> /dev/null \
-&& apt update 2> /dev/null \
-&& apt upgrade -y 2> /dev/null 
+apt --fix-broken install -y nala \
+&& nala update \
+&& nala upgrade -y \
+&& nala install -y software-properties-common \
+
+# && apt autoremove -y \
+# && apt autoclean -y \
+

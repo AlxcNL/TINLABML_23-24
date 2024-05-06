@@ -8,9 +8,10 @@ sudo apt-get install -y software-properties-common \
 if ( ! command -v ansible ); then
     echo "Install Ansible"
     (
-        sudo /home/kasm-user/scripts/install_python.sh \
-        /home/kasm-user/scripts/install_ansible.sh \
-        && /home/kasm-user/scripts/install_ansible_plugins.sh
+        sudo install_python.sh \
+        && bash -l \
+        && install_ansible.sh \
+        && install_ansible_plugins.sh
     )
 fi
 
