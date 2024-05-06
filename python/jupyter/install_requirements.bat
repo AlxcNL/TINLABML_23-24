@@ -1,0 +1,1 @@
+conda install -y -c conda-forge ipykernel jupyterlab jupyter_console matplotlib nbconvertscikit-learn numpy pandas pandoc pathlib pypdf2 scikit-learn seaborn shellcheck subprocess32

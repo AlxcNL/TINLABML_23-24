@@ -15,9 +15,13 @@ conda install -y -c conda-forge \
     ipykernel \
     jupyterlab \
     jupyter_console \
+    matplotlib \
     nbconvert \
+    numpy \
     pandoc \
+    pandas \
     pathlib \
     pypdf2 \
+    seaborn \
     shellcheck \
     subprocess32
