@@ -19,10 +19,10 @@ apt-get update \
 echo "Install python, pip and pipx"
 sudo nala install -y python-is-python3 \
     python3-full \
-    python3-pip \
-    pipx
+    python3-pip
+#     pipx
 
-pipx ensurepath
+# pipx ensurepath
 
-bash -l
+# bash -l
 # sudo pipx ensurepath --global
