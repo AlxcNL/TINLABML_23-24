@@ -4,7 +4,7 @@
 # Author: J.A.Boogaard@hr.nl
 
 VAGRANT_API_VERSION = "2"
-WORKSPACE = "."
+WORKSPACE = ".."
 
 SERVER_IMAGE_NAME = "AlxcNL/torcs-server"
 SERVER_BOX_VERSION = "0.3"
