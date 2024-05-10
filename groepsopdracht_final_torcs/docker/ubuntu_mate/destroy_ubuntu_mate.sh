@@ -2,9 +2,11 @@
 # Author: J.A.Boogaard@hr.nl
 
 runtime="docker"
-container="ubuntu-torcs"
+container="torcs-server"
 
-if [[ -n $($runtime ps -a | grep $container) ]]; then
-    $runtime container stop $container
-    $runtime container rm -f $container
-fi
+./stop_ubuntu_mate.sh || echo "Container $container already stopped"
+# container_id="$($runtime container ps -a | grep $container | cut -d ' ' -f1)"
+# echo $container_id
+$runtime container rm -f $container
+
+# docker ps -a

@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 # Author: J.A.Boogaard@hr.nl
 
-container="ubuntu-torcs"
+runtime="docker"
+container="torcs-server"
 
-if [[ -n $(docker ps | grep $container) ]]; then
-    docker container stop $container
-fi
+$runtime container ps | grep $container && docker container stop $container

@@ -3,19 +3,23 @@
 
 container="torcs-server"
 runtime="docker"
+tag="ubuntu-mate"
+image="lscr.io/linuxserver/webtop"
+host_port=3020
+host_port_https=3031
 
-./stop_ubuntu_mate.sh || true
+./destroy_ubuntu_mate.sh
 
- $runtime container run -i \
+$runtime container run -d \
   --name=$container \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Europe/Amsterdam \
   -e TITLE="TINLAB Torcs Server" \
-  -p 3000:3000 \
-  -p 3001:3001 \
+  -p $host_port:3000 \
+  -p $host_port_https:3001 \
   -v "$PWD/config:/config" \
-  torcs-server:0.1
+  "$image:$tag"
 
 sleep 4;
-python3 -m webbrowser http://localhost:3000/
+python3 -m webbrowser http://localhost:${host_port}/
