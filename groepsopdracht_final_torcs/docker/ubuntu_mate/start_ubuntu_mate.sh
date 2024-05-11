@@ -4,7 +4,7 @@
 container="torcs-server"
 runtime="docker"
 tag="ubuntu-mate"
-image="lscr.io/linuxserver/webtop"
+image="torcs-server:0.1"
 host_port=3020
 host_port_https=3031
 
