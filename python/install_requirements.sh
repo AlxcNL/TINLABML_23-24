@@ -13,6 +13,8 @@ conda install -y -c conda-forge \
     bash_kernel \
     conda-bash-completion \
     ipykernel \
+    itertools \
+    joblib \
     jupyterlab \
     jupyter_console \
     matplotlib \
@@ -22,6 +24,11 @@ conda install -y -c conda-forge \
     pandas \
     pathlib \
     pypdf2 \
+    scipy \
+    scikit-learn \
     seaborn \
     shellcheck \
     subprocess32
+    tensorflow
+
+pipx install bpython
