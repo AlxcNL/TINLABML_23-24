@@ -3,5 +3,5 @@
 
 box="torcs-server"
 echo "Start VirtualBox $box"
-vagrant up --provider=virtualbox $box
+vagrant down $obx
 vagrant status
