@@ -3,5 +3,6 @@
 
 box="torcs-server"
 echo "Start VirtualBox $box"
-vagrant up --provider=virtualbox $box
+echo "Destroy VirtualBox $box"
+vagrant destroy $box
 vagrant status

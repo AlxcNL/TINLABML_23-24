@@ -168,13 +168,11 @@ groepsopdracht_final_torcs/docker/webtop/install/ansible_community.general.make_
 groepsopdracht_final_torcs/docker/webtop/install/cc5Ve4PR.s
 groepsopdracht_final_torcs/docker/webtop/install/ccxERl8N.s
 groepsopdracht_final_torcs/docker/webtop/install/clearsigned.message.*
-groepsopdracht_final_torcs/vagrant/.vagrant
 vagrant/.vagrant
 groepsopdracht_final_torcs/docker/ubuntu_mate/config/
 groepsopdracht_final_torcs/torcs-client/scr-client-cpp/
 groepsopdracht_final_torcs/torcs-client/torcs-client.zip
 python/jupyter/notebooks/pics.zip
-groepsopdracht_final_torcs/vagrant/.vagrant/
-python/jupyter/COURSE-NOTEBOOKS/
 python/jupyter/COURSE-NOTEBOOKS/
 docker-webtop
+groepsopdracht_final_torcs/vagrant/.vagrant/
