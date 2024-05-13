@@ -28,7 +28,6 @@ conda install -y -c conda-forge \
     scikit-learn \
     seaborn \
     shellcheck \
-    subprocess32 \
-    tensorflow
+    subprocess32
 
 pipx install bpython
