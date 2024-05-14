@@ -14,16 +14,20 @@ container_port_https=3021
 
 ./destroy_ubuntu_mate.sh || true
 
-$runtime container run -i \
+$runtime container run -id \
   --name=$container \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Europe/Amsterdam \
   -e TITLE="TINLAB Torcs Server" \
-  -p "$host_port:$container_port" \
-  -p "$host_port_https:$container_port_https" \
-  -v "$PWD/config:/config" \
-  "$image:$tag"
+  -e CUSTOM_PORT=$container_port \
+  -e CUSTOM_HTTPS_PORT=$container_port_https \
+  -p "${host_port}:${container_port}" \
+  -p "${host_port_https}:${container_port_https}" \
+  -v "${PWD}/config:/config" \
+  -v "${PWD}/desktop:/config/Desktop" \
+  -v "${PWD}/pics:/config/Pictures" \
+  "${image}:${tag}"
 
 sleep 4;
 python3 -m webbrowser http://localhost:${host_port}
