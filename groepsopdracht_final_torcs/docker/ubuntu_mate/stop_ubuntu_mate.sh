@@ -5,3 +5,4 @@ runtime="docker"
 container="torcs-server"
 
 $runtime container ps | grep $container && docker container stop $container
+
