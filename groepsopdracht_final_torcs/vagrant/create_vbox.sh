@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # Author: J.A.Boogaard@hr.nl
 
-box="torcs-server"
-echo "Start VirtualBox $box"
+version="0.3"
+
+./destroy_vbox.sh
+
+box="AlxcNL/torcs-server"
 echo "Create VirtualBox $box"
-vagrant init AlxcNL/torcs-server --box-version 0.3 && \
-./start_vbox.sh
