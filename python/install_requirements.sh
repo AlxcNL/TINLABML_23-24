@@ -13,7 +13,7 @@ conda install -y -c conda-forge \
     bash_kernel \
     conda-bash-completion \
     ipykernel \
-    itertools \
+    gymnasium \
     joblib \
     jupyterlab \
     jupyter_console \
@@ -30,4 +30,7 @@ conda install -y -c conda-forge \
     shellcheck \
     subprocess32
 
-pipx install bpython
+pip install --upgrade pip pipx
+
+pipx install bpython \
+    itertools
