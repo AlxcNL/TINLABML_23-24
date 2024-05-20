@@ -8,17 +8,19 @@ echo "Update conda"
 conda update -c defaults conda \
 
 echo "Install packages with conda"
-conda install -y -c conda-forge \
-    bash \
+conda install -y -c conda-forge pytorch \
     bash_kernel \
+    bpython \
     conda-bash-completion \
     ipykernel \
     gymnasium \
     joblib \
     jupyterlab \
     jupyter_console \
+    jupyterlab_widgets \
     matplotlib \
     nbconvert \
+    more-itertools \
     numpy \
     pandoc \
     pandas \
@@ -28,9 +30,15 @@ conda install -y -c conda-forge \
     scikit-learn \
     seaborn \
     shellcheck \
-    subprocess32
+    subprocess32 \
+    cpuonly \
+    pytorch \
+    torchvision
 
-pip install --upgrade pip pipx
+# conda install -y -c pytorch \
+#     cpuonly \
+#     pytorch \
+#     torchvision
 
-pipx install bpython \
-    itertools
+pip install --upgrade pip \
+    tensorflow
