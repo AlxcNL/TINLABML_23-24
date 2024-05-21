@@ -7,7 +7,7 @@ package="scr-client-cpp"
 archive="${package}.tgz"
 
 wget "https://sourceforge.net/projects/cig/files/SCR%20Championship/Client%20C%2B%2B/2.0/${archive}"
-tar -xzf $archive
+tar -xzf $archive && rm $archive
 
 (
     cd $package;
