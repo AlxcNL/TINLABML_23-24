@@ -3,6 +3,7 @@
 
 # https://linuxpip.org/python-is-python3
 # https://pipx.pypa.io/latest/installation/
+# https://rocm.docs.amd.com/projects/install-on-linux/en/latest/how-to/3rd-party/pytorch-install.html
 
 if type -p "python" && [ -f /usr/bin/python3.10 ]; then
     echo "Python 3 already installed"
@@ -19,10 +20,8 @@ apt-get update \
 echo "Install python, pip and pipx"
 sudo nala install -y python-is-python3 \
     python3-full \
-    python3-pip
-#     pipx
+    python3-pip \
+    libjpeg-dev \
+    python3-dev
 
-# pipx ensurepath
-
-# bash -l
-# sudo pipx ensurepath --global
+pip install wheel setuptools

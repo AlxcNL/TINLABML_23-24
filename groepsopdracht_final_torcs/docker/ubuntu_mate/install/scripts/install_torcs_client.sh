@@ -5,11 +5,17 @@
 
 package="scr-client-cpp"
 archive="${package}.tgz"
+targetDir="/tmp/torcs"
 
-wget "https://sourceforge.net/projects/cig/files/SCR%20Championship/Client%20C%2B%2B/2.0/${archive}"
-tar -xzf $archive && rm $archive
+wget "https://sourceforge.net/projects/cig/files/SCR%20Championship/Client%20C%2B%2B/2.0/${archive}" && \
+mkdir -p "/tmp/torcs/${package}" && \
+tar -v -xzf $archive --directory $targetDir && \
+rm $archive
 
 (
-    cd $package;
+    cd "/tmp/torcs/${package}";
     make -j4;
 )
+
+echo "Make client global"
+echo -e "\nexport PATH=\"${PATH}:/tmp/torcs/scr-client-cpp/\"" >> ~/.bashrc
