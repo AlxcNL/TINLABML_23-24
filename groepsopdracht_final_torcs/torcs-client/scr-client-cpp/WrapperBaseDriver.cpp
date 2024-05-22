@@ -33,11 +33,12 @@ void writeCsvRow(CarState X, CarControl Y)
     // X : Data from Server
 
     // 8 Car State Features
-    printf("%f;%f;%f;%i;%i;%f;%f;%f", X.getSpeedX(), X.getSpeedY(), X.getSpeedZ(), X.getRpm(), X.getGear(), X.getAngle(), X.getZ(), X.getDamage());
+    printf( "%f;%f;%f;%i;%i;%f;%f;%f", X.getSpeedX(), X.getSpeedY(), X.getSpeedZ(), X.getRpm(), X.getGear(), X.getAngle(), X.getZ(), X.getDamage() );
     printf(";");
 
-    // 6 Race Environment Features
-    printf("%f;%i;%f;%f;%f;%f", X.getTrackPos(), X.getRacePos(), X.getDistRaced(), X.getDistFromStart(), X.getCurLapTime(), X.getLastLapTime());
+    // 9 Race Environment Features
+    printf( "%f;%i;%f;%f;%f;%f", X.getTrackPos(), X.getRacePos(), X.getDistRaced(), X.getDistFromStart(), X.getCurLapTime(), X.getLastLapTime() );
+    printf( "%f;%f;%f", X.getTrack(10), X.getTrack(9),X.getTrack(8) );
     printf(";");
 
     // Y : Data from Agent

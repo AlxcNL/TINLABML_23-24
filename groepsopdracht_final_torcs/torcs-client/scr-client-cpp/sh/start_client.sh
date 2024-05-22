@@ -1,16 +1,14 @@
 #!/usr/bin/env bash
 
-export TORCS_SERVER="localhost"
+(
+	cd ..;
+    mkdir -p logs;
 
-function drive {
-    mkdir -p logs
+    echo "Clear previous log";
+    date > logs/torcs_client.log;
 
-    echo "Clear previous log"
-    date > logs/torcs_client.log
+    echo "Start client with logging";
+    export TORCS_SERVER="localhost";
+    torcs-client | tee -a logs/torcs_client.log;
 
-    echo "Start client with logging"
-    torcs-client | tee -a logs/torcs_client.log    
-
-}
-
- drive
+)

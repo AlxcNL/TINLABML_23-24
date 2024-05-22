@@ -56,7 +56,6 @@ cover/
 *.pot
 
 # Django stuff:
-*.log
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
@@ -183,3 +182,4 @@ groepsopdracht_final_torcs/vagrant.zip
 groepsopdracht_final_torcs/torcs-client/Reinforcement-Learning-using-Q-Learning
 groepsopdracht_final_torcs/torcs-client/scr-client-cpp/*.o
 groepsopdracht_final_torcs/torcs-client/scr-client-cpp/client
+groepsopdracht_final_torcs/docker/sandbox/install_scripts/dock-replace.log
