@@ -34,7 +34,8 @@
 /*** defines for UDP *****/
 #define UDP_MSGLEN 1000
 #define UDP_CLIENT_TIMEUOT 1000000
-// #define __UDP_CLIENT_VERBOSE__
+#define __UDP_CLIENT_VERBOSE__
+#define TORCS_SERVER "localhost"
 /************************/
 
 #ifdef WIN32
@@ -312,7 +313,7 @@ void parse_args(int argc, char *argv[], char *hostName, unsigned int &serverPort
     maxEpisodes = 0;
     maxSteps = 0;
     serverPort = 3001;
-    strcpy(hostName, "torcs-server");
+    strcpy(hostName, "TORCS_SERVER");
     strcpy(id, "SCR");
     //    noise=false;
     //    noiseAVG=0;

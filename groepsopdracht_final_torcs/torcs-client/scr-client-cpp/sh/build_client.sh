@@ -6,7 +6,9 @@
 	make clean;
 
 	echo "Rebuild Client"
-	make clean && \
-	make;
+	make
+
+	echo "Make client globally available as torcs-client"
+	sudo ln -s $(realpath ./client) /usr/local/bin/torcs-client
 
 )	
