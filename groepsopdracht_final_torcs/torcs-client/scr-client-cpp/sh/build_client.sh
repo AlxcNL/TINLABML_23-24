@@ -1,14 +1,12 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
-function makeClient {
-    echo "Make Client"
-    make clean && make
-}
+(
+	cd ..;
+	echo "Remove current Client"
+	make clean;
 
-cls
+	echo "Rebuild Client"
+	make clean && \
+	make;
 
-if [[ "$(dirname $0)" == "sh" ]]; then
-    makeClient
-else
-    (cd ..; makeClient)
-fi
+)	
