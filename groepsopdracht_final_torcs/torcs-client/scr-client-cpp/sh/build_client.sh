@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 (
-	cd ..;
+	cd ../src;
 
 	echo "Remove current Client";
 	make clean;

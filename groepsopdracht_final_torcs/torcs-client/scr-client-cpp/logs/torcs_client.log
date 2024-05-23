@@ -1,0 +1,20 @@
+Thu May 23 06:48:10 PM CEST 2024
+***********************************
+HOST: localhost
+PORT: 3001
+ID: SCR
+MAX_STEPS: 0
+MAX_EPISODES: 0
+TRACKNAME: unknown
+STAGE: UNKNOWN
+***********************************
+m_client_name;m_timestamp;s_speed_x;s_speed_y;s_speed_z;s_rpm;s_gear;s_angle;s_z;s_damage;s_track_position;s_race_position;s_distance_raced;s_distance_from_start;s_current_laptime;s_last_laptimes_plus5_degrees2caraxis;s_parallel2caraxis;s_min5_degrees2caraxis;a_acceleration;a_brake;a_gear;a_steer;a_clutch
+***********************************
+Sending id to server: SCR
+Sending init string to the server: SCR(init -90 -75 -60 -45 -30 -20 -15 -10 -5 0 5 10 15 20 30 45 60 75 90)
+Sending id to server: SCR
+Sending init string to the server: SCR(init -90 -75 -60 -45 -30 -20 -15 -10 -5 0 5 10 15 20 30 45 60 75 90)
+Sending id to server: SCR
+Sending init string to the server: SCR(init -90 -75 -60 -45 -30 -20 -15 -10 -5 0 5 10 15 20 30 45 60 75 90)
+Sending id to server: SCR
+Sending init string to the server: SCR(init -90 -75 -60 -45 -30 -20 -15 -10 -5 0 5 10 15 20 30 45 60 75 90)
