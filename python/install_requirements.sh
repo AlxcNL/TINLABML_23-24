@@ -9,15 +9,14 @@ function install_requirements() {
     conda update -c defaults conda \
 
     echo "Install packages with conda"
-    conda install -y -c conda-forge pytorch \
+    conda install -y -c conda-forge \
         bash_kernel \
         bpython \
-        conda-bash-completion \
         ipykernel \
         gymnasium \
         joblib \
         jupyterlab \
-        jupyter_console \
+        jupyter \
         jupyterlab_widgets \
         matplotlib \
         nbconvert \
@@ -31,18 +30,20 @@ function install_requirements() {
         scikit-learn \
         seaborn \
         shellcheck \
-        subprocess32 
+        subprocess32 \
+        tensorboard
 
 }
 
     # cpuonly \
 function install_tf() {
-    echo "Install TensorFlow with ROCM"
-    sudo apt-get install -y rocm-libs rccl
+    # echo "Install TensorFlow with ROCM"
+    # sudo apt-get install -y rocm-libs rccl
     pip install --upgrade pip \
         protobuf==3.19.0 \
         tensorflow \
-        tensorflow-rocm
+        tensorflow-rocm \
+        pytorch \
 
     # echo "Test Tensorflow installation"
 
@@ -51,14 +52,15 @@ function install_tf() {
 function install_pt() {
     # https://rocm.docs.amd.com/projects/install-on-linux/en/latest/how-to/3rd-party/pytorch-install.html
     echo "Install PyTorch with ROCM"
-    pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm6.1/ && \
-    pytorch
+	conda install -y pytorch torchvision cpuonly -c pytorch
+    # pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm6.1/ && \
+    # pytorch
     
     echo "Test PyTorch installation"
     python -c 'import torch' 2> /dev/null && echo 'Success' || echo 'Failure'    
 
 }
 
-# install_requirements
+install_requirements
 # install_tf
 install_pt
