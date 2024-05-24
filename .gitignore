@@ -180,7 +180,7 @@ python/jupyter/notebooks/pics/pics.zip
 groepsopdracht_final_torcs/vagrant.zip
 groepsopdracht_final_torcs/torcs-client/Reinforcement-Learning-using-Q-Learning
 groepsopdracht_final_torcs/docker/sandbox/install_scripts/dock-replace.log
-groepsopdracht_final_torcs/torcs-client/scr-client-cpp/scr/client
+groepsopdracht_final_torcs/torcs-client/scr-client-cpp/src/client
 groepsopdracht_final_torcs/torcs-client/scr-client-cpp/src/*.o
 groepsopdracht_final_torcs/torcs-client/*.zip
 groepsopdracht_final_torcs/torcs-client/scr-client-cpp/logs/*.log
