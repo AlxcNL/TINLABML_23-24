@@ -184,3 +184,4 @@ groepsopdracht_final_torcs/torcs-client/scr-client-cpp/src/client
 groepsopdracht_final_torcs/torcs-client/scr-client-cpp/src/*.o
 groepsopdracht_final_torcs/torcs-client/*.zip
 groepsopdracht_final_torcs/torcs-client/scr-client-cpp/logs/*.log
+groepsopdracht_final_torcs/torcs-client/torcs-agent/test/resources/drivelog-2016-08-20-17-50-03.pickle
