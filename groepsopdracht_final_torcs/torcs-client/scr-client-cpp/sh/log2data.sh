@@ -3,6 +3,8 @@
 # Author: J.A.Boogaard@hr.nl
 
 track="$1"
+csvfile="csv/${track}_$(date +%F).csv"
+logfile="logs/torcs_client.log"
 
 if [ -z "$track" ]; then
     echo "Error. $0 requires a trackname"
@@ -11,5 +13,5 @@ fi
 
 (
     cd ..;
-    cat logs/torcs_client.log | grep ';' > "data/${track}_$(date +%F).csv";
+    cat $logfile | grep ';' > $csvfile;
 )

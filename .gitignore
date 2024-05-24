@@ -175,11 +175,12 @@ python/jupyter/COURSE-NOTEBOOKS/
 docker-webtop
 python/jupyter/notebooks/csv/eurovision-2016.csv
 groepsopdracht_final_torcs/vagrant/.vagrant/
-groepsopdracht_final_torcs/install/scr-client-cpp.tgz
 python/jupyter/notebooks/csv/csv.zip
 python/jupyter/notebooks/pics/pics.zip
 groepsopdracht_final_torcs/vagrant.zip
 groepsopdracht_final_torcs/torcs-client/Reinforcement-Learning-using-Q-Learning
-groepsopdracht_final_torcs/torcs-client/scr-client-cpp/*.o
-groepsopdracht_final_torcs/torcs-client/scr-client-cpp/client
 groepsopdracht_final_torcs/docker/sandbox/install_scripts/dock-replace.log
+groepsopdracht_final_torcs/torcs-client/scr-client-cpp/scr/client
+groepsopdracht_final_torcs/torcs-client/scr-client-cpp/src/*.o
+groepsopdracht_final_torcs/torcs-client/*.zip
+groepsopdracht_final_torcs/torcs-client/scr-client-cpp/logs/*.log

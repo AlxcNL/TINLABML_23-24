@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 # Author: J.A.Boogaard@hr.nl
 
 install_cmd="apt"
