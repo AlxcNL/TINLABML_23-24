@@ -38,6 +38,8 @@ void writeCsvRow(CarState X, CarControl Y)
 
     // 9 Race Environment Features
     printf( "%f;%i;%f;%f;%f;%f", X.getTrackPos(), X.getRacePos(), X.getDistRaced(), X.getDistFromStart(), X.getCurLapTime(), X.getLastLapTime() );
+    /* BUGFIX */
+    printf(";");
     printf( "%f;%f;%f", X.getTrack(10), X.getTrack(9),X.getTrack(8) );
     printf(";");
 
