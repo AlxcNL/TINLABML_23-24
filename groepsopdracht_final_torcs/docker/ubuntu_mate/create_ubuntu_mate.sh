@@ -35,6 +35,7 @@ docker cp pics/Torcs-title.png $container:/config/Pictures;
 docker cp install/scripts/install_torcs_client.sh $container:/config/;
 
 echo "Install Torcs Client example"
+docker container exec -i $container chmod u+x/config/install_torcs_client.sh
 docker container exec -i $container /config/install_torcs_client.sh
 
 ./stop_ubuntu_mate.sh
