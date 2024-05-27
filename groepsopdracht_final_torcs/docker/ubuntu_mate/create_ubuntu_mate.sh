@@ -4,8 +4,7 @@
 container="torcs-server"
 runtime="docker"
 tag="0.1"
-# image="docker.io/jaboo/torcs-server"
-image="jaboo/torcs-server"
+image="docker.io/jaboo/torcs-server"
 host_port=3000
 host_port_https=3021
 container_port=3000
@@ -32,9 +31,5 @@ $runtime container run -id \
 echo "Create Desktop shortcut"
 docker cp desktop/torcs.desktop $container:/config/Desktop;
 docker cp pics/Torcs-title.png $container:/config/Pictures;
-docker cp install/scripts/install_torcs_client.sh $container:/config/;
-
-echo "Install Torcs Client example"
-docker container exec -i $container /config/install_torcs_client.sh
 
 ./stop_ubuntu_mate.sh

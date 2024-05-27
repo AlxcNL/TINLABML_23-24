@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
 
-function makeClient {
-    echo "Make Client"
-    make clean && make
-}
+(
+	cd ../src;
 
-cls
+	echo "Remove current Client";
+	make clean;
+	sudo unlink /usr/local/bin/torcs-client
 
-if [[ "$(dirname $0)" == "sh" ]]; then
-    makeClient
-else
-    (cd ..; makeClient)
-fi
+	echo "Rebuild Client";
+	make;
+
+	echo "Make client globally available as torcs-client";
+	sudo ln -s $(realpath ./client) /usr/local/bin/torcs-client;
+
+)	

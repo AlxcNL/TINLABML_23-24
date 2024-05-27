@@ -56,7 +56,6 @@ cover/
 *.pot
 
 # Django stuff:
-*.log
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
@@ -170,12 +169,19 @@ groepsopdracht_final_torcs/docker/webtop/install/ccxERl8N.s
 groepsopdracht_final_torcs/docker/webtop/install/clearsigned.message.*
 vagrant/.vagrant
 groepsopdracht_final_torcs/docker/ubuntu_mate/config/
-groepsopdracht_final_torcs/torcs-client/scr-client-cpp/
 groepsopdracht_final_torcs/torcs-client/torcs-client.zip
 python/jupyter/notebooks/pics.zip
 python/jupyter/COURSE-NOTEBOOKS/
 docker-webtop
 python/jupyter/notebooks/csv/eurovision-2016.csv
 groepsopdracht_final_torcs/vagrant/.vagrant/
-groepsopdracht_final_torcs/install/scr-client-cpp/
-groepsopdracht_final_torcs/install/scr-client-cpp.tgz
+python/jupyter/notebooks/csv/csv.zip
+python/jupyter/notebooks/pics/pics.zip
+groepsopdracht_final_torcs/vagrant.zip
+groepsopdracht_final_torcs/torcs-client/Reinforcement-Learning-using-Q-Learning
+groepsopdracht_final_torcs/docker/sandbox/install_scripts/dock-replace.log
+groepsopdracht_final_torcs/torcs-client/scr-client-cpp/src/client
+groepsopdracht_final_torcs/torcs-client/scr-client-cpp/src/*.o
+groepsopdracht_final_torcs/torcs-client/*.zip
+groepsopdracht_final_torcs/torcs-client/scr-client-cpp/logs/*.log
+groepsopdracht_final_torcs/torcs-client/torcs-agent/test/resources/drivelog-2016-08-20-17-50-03.pickle
