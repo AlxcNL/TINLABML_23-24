@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-hostname="localhost"
+host="localhost"
 
 if [[ -z "$1" ]]; then
     echo "Error. $0 requires a portnumber"
@@ -12,4 +12,4 @@ portnr="$1"
 [[ -n "$2" ]] && hostname="$2"
 
 echo "Torcs client is waiting for a connection with $hostname torcs-server at $portnr"
-python ./run.py --port $portnr --hostname $hostname 
+python ./run.py --port $portnr --hostname $host 
