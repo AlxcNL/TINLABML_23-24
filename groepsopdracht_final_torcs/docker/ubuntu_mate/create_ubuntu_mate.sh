@@ -29,7 +29,7 @@ $runtime container run -id \
   "${image}:${tag}"
 
 echo "Create Desktop shortcut"
-docker cp desktop/torcs.desktop $container:/config/Desktop;
+docker cp desktop/*.desktop $container:/config/Desktop;
 docker cp pics/Torcs-title.png $container:/config/Pictures;
 
 ./stop_ubuntu_mate.sh
