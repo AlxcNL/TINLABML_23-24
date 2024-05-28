@@ -3,8 +3,8 @@
 
 container="torcs-server"
 runtime="docker"
-tag="0.1"
-image="docker.io/jaboo/torcs-server"
+tag="0.2"
+image="jaboo/torcs-server"
 host_port=3000
 host_port_https=3021
 container_port=3000
