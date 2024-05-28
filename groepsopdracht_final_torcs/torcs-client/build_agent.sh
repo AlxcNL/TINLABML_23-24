@@ -23,7 +23,7 @@ function buildImage() {
 
 buildImage
 
-if [[ $action -eq "push" ]]; then
-    image="${repo}/${image_name}:latest"
-    buildImage
+if [[ "$action" -eq "push" ]]; then
+    echo $image
+    cmd="docker tag $image ${repo}/${image_name}:latest"
 fi
