@@ -3,7 +3,7 @@
 
 container="torcs-server"
 runtime="docker"
-tag="0.1"
+tag="0.2"
 image="docker.io/jaboo/torcs-server"
 host_port=3000
 host_port_https=3021
@@ -29,7 +29,8 @@ $runtime container run -id \
   "${image}:${tag}"
 
 echo "Create Desktop shortcut"
-docker cp desktop/*.desktop $container:/config/Desktop;
-docker cp pics/Torcs-title.png $container:/config/Pictures;
+docker cp desktop/mate-terminal.desktop $container:/config/Desktop/;
+docker cp desktop/torcs.desktop $container:/config/Desktop/;
+docker cp pics/Torcs-title.png $container:/config/Pictures/;
 
 ./stop_ubuntu_mate.sh
