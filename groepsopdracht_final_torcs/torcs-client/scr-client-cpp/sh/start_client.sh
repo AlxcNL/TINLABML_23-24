@@ -1,17 +1,14 @@
 #!/usr/bin/env bash
 
-function drive {
-    mkdir -p logs
-    echo "Clear previous log"
-    echo > logs/torcs_client.log   	
-    date > logs/torcs_client.log; ./client >> logs/torcs_client.log    
+(
+	cd ..;
+    mkdir -p logs;
 
-}
+    echo "Clear previous log";
+    date > logs/torcs_client.log;
 
-cls
+    echo "Start client with logging";
+    export TORCS_SERVER="localhost";
+    torcs-client | tee -a logs/torcs_client.log;
 
-if [[ "$(dirname $0)" == "sh" ]]; then
-    drive
-else
-    (cd ..; drive)
-fi
+)
