@@ -48,7 +48,7 @@ testInput = np.array([0, 1])
 testInput = np.array([1, 0])
 testInput = np.array([1, 1])
 
-orPerceptron.predict
+orPerceptron.predict()
 
 # OPDDRACHT
 

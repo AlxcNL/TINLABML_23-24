@@ -59,6 +59,6 @@ function install_pt() {
 
 }
 
-# install_requirements
+install_requirements
 # install_tf
-install_pt
+# install_pt
