@@ -15,4 +15,5 @@ RUN pip install \
 
 USER 1001
 
-ENTRYPOINT ["python", "run.py", "--hostname", "host.docker.internal", "--port", "3001"]
+ENTRYPOINT ["python", "run.py", "--port", "3001", "--hostname"]
+CMD [ "192.168.56.20" ]
