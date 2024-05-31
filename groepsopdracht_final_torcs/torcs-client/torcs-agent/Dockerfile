@@ -15,5 +15,5 @@ RUN pip install \
 
 USER 1001
 
-ENTRYPOINT ["python", "run.py", "--port", "3001", "--hostname"]
+ENTRYPOINT ["python", "run.py", "--port", "3003", "--hostname"]
 CMD [ "localhost" ]
