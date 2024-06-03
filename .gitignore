@@ -188,3 +188,4 @@ groepsopdracht_final_torcs/torcs-client/torcs-agent/test/resources/drivelog-2016
 groepsopdracht_final_torcs/torcs-client/scr-client-cpp/*.o
 groepsopdracht_final_torcs/torcs-client/scr-client-cpp/client
 groepsopdracht_final_torcs/torcs-server/logs/torcs_server.log
+groepsopdracht_final_torcs/torcs-client/gym-torcs/gym
