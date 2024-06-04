@@ -20,7 +20,8 @@ RUN conda install -y conda-libmamba-solver && \
     conda install -y -c pytorch cpuonly pytorch && \
     conda install -y -c conda-forge --file requirements.txt
 
+# uid
 USER 1001
 
-ENTRYPOINT ["python", "run.py", "--port", "3003", "--hostname"]
+ENTRYPOINT ["python", "run.py", "--port", "3001", "--hostname"]
 CMD [ "localhost" ]
