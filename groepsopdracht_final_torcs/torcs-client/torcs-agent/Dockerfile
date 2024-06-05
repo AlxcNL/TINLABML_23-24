@@ -24,4 +24,4 @@ RUN conda install -y conda-libmamba-solver && \
 USER 1001
 
 ENTRYPOINT ["python", "run.py", "--port", "3001", "--hostname"]
-CMD [ "localhost" ]
+CMD [ "host.docker.internal" ]
