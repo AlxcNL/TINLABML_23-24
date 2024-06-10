@@ -1,24 +1,19 @@
 version: "3.6"
 
 services:
-  torcs-agent:
+
+  torcs-agent2:
+    container_name: "team2"
     command:
-      - "localhost"
-    container_name: "torcs-agent"
-    entrypoint:
-      - "python"
-      - "run.py"
-      - "--port"
-      - "3001"
       - "--hostname"
+      - "host.docker.internal"
     environment:
       - "PATH=/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "LANG=C.UTF-8"
       - "LC_ALL=C.UTF-8"
     extra_hosts:
       - "host.docker.internal:host-gateway"
-    hostname: "2bbc483d7a20"
-    image: "jaboo/torcs-agent:0.1"
+    image: "torcs-agent:240201"
     ipc: "private"
     labels:
       MAINTAINER: "Jeroen Boogaard <j.a.boogaard@hr.nl>"
@@ -28,7 +23,7 @@ services:
     mac_address: "02:42:ac:11:00:02"
     network_mode: "bridge"
     ports:
-      - "3001:3001/tcp"
+      - "3002:3002"
     stdin_open: true
     user: "1001"
     working_dir: "/app"
