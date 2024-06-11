@@ -7,23 +7,25 @@ services:
     command:
       - "--hostname"
       - "host.docker.internal"
-    environment:
-      - "PATH=/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-      - "LANG=C.UTF-8"
-      - "LC_ALL=C.UTF-8"
+    image: "torcs-agent:240201"
+    ports:
+      - "3002:3002/tcp"
+    command:
+      - "--hostname"
+      - "host.docker.internal"
     extra_hosts:
       - "host.docker.internal:host-gateway"
-    image: "torcs-agent:240201"
-    ipc: "private"
-    labels:
-      MAINTAINER: "Jeroen Boogaard <j.a.boogaard@hr.nl>"
-    logging:
-      driver: "json-file"
-      options: {}
-    mac_address: "02:42:ac:11:00:02"
-    network_mode: "bridge"
+ 
+  torcs-agent6:
+    container_name: "team6"
+    command:
+      - "--hostname"
+      - "host.docker.internal"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    command:
+      - "--hostname"
+      - "host.docker.internal"
+    image: "torcs-agent:240601"
     ports:
-      - "3002:3002"
-    stdin_open: true
-    user: "1001"
-    working_dir: "/app"
+      - "3006:3001/tcp"
