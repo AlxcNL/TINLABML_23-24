@@ -5,7 +5,7 @@ VAGRANT_API_VERSION = "2"
 WORKSPACE = "../"
 
 SERVER_IMAGE_NAME = "AlxcNL/torcs-server"
-SERVER_BOX_VERSION = "0.2"
+SERVER_BOX_VERSION = "0.4"
 SERVER_IP = "192.168.56.20"
 
 Vagrant.configure(VAGRANT_API_VERSION) do |config|
@@ -15,8 +15,8 @@ Vagrant.configure(VAGRANT_API_VERSION) do |config|
   config.vm.define "torcs-server" do |server|
     server.vm.provider "virtualbox" do |vb|
       vb.check_guest_additions = false
-      vb.memory = "4096"
-      vb.cpus = 4
+      vb.memory = "8192"
+      vb.cpus = 6
       vb.gui = false
     end
       

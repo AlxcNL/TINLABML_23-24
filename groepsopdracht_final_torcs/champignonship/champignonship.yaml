@@ -1,0 +1,31 @@
+version: "3.6"
+
+services:
+
+  torcs-agent2:
+    container_name: "team2"
+    command:
+      - "--hostname"
+      - "host.docker.internal"
+    image: "torcs-agent:240201"
+    ports:
+      - "3002:3002/tcp"
+    command:
+      - "--hostname"
+      - "host.docker.internal"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+ 
+  torcs-agent6:
+    container_name: "team6"
+    command:
+      - "--hostname"
+      - "host.docker.internal"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    command:
+      - "--hostname"
+      - "host.docker.internal"
+    image: "torcs-agent:240601"
+    ports:
+      - "3006:3001/tcp"
