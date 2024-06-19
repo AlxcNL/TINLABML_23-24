@@ -194,3 +194,6 @@ groepsopdracht_final_torcs/docker/ubuntu_mate/.dbus
 groepsopdracht_final_torcs/docker/ubuntu_mate/.XDG
 groepsopdracht_final_torcs/docker/ubuntu_mate/.ICEauthority
 groepsopdracht_final_torcs/docker/ubuntu_mate/ssl
+groepsopdracht_final_torcs/torcs-client/gym-torcs/gym
+groepsopdracht_final_torcs/champignonship/teams/06
+groepsopdracht_final_torcs/vagrant/*.box

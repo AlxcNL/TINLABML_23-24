@@ -1,0 +1,15 @@
+services:
+
+   torcs-agent6:
+    image: "ghcr.io/alxcnl/torcs-agent:3006"   
+    build:
+      context: teams/06
+      dockerfile: Dockerfile
+    container_name: "team6"
+    command:
+      - "--hostname"
+      - "host.docker.internal"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "3006:3001/tcp"

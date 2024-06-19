@@ -7,7 +7,7 @@ VAGRANT_API_VERSION = "2"
 WORKSPACE = ".."
 
 SERVER_IMAGE_NAME = "AlxcNL/torcs-server"
-SERVER_BOX_VERSION = "0.3"
+SERVER_BOX_VERSION = "0.4"
 SERVER_IP = "192.168.56.20"
 
 Vagrant.configure(VAGRANT_API_VERSION) do |config|
@@ -18,8 +18,8 @@ Vagrant.configure(VAGRANT_API_VERSION) do |config|
   config.vm.define "torcs-server" do |server|
     server.vm.provider "virtualbox" do |vb|
       vb.check_guest_additions = true
-      vb.memory = "4096"
-      vb.cpus = 4
+      vb.memory = "8192"
+      vb.cpus = 6
       vb.gui = true
     end
       
@@ -30,6 +30,11 @@ Vagrant.configure(VAGRANT_API_VERSION) do |config|
     server.vm.hostname = "torcs-server"
     server.vm.synced_folder WORKSPACE, "/vagrant"     
     server.vm.network "forwarded_port", guest: 3001, host: 3001, protocol: "tcp"
+    server.vm.network "forwarded_port", guest: 3002, host: 3002, protocol: "udp"
+    
+    server.vm.network "forwarded_port", guest: 3006, host: 3006, protocol: "tcp"    
+
+    server.vm.network "forwarded_port", guest: 9000, host: 9000, protocol: "tcp"    
   
     # PROVISION
     server.vm.provision "docker",

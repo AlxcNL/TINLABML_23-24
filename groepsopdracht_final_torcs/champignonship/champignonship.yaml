@@ -1,0 +1,36 @@
+services:
+
+  torcs-agent3:
+    image: "ghcr.io/alxcnl/torcs-agent:3003"   
+    container_name: "team3"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "3003:3003/tcp"
+
+  torcs-agent6:
+    image: "ghcr.io/alxcnl/torcs-agent:3006"   
+    container_name: "team6"
+    environment:
+      - "torcs-server=host.docker.internal"
+    command:
+      - "--hostname"
+      - "host.docker.internal"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "3006:3006/tcp"
+
+  torcs-agent10:
+    image: "ghcr.io/alxcnl/torcs-agent:3010"   
+    container_name: "team10"
+    environment:
+      - "torcs-server=host.docker.internal"
+    command:
+      - "--hostname"
+      - "host.docker.internal"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "3010:3010/tcp"              
+      

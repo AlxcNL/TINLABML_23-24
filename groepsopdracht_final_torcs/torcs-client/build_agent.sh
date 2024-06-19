@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # Author: J.A.Boogaard@hr.nl
 
-repo="jaboo"
-image_name="torcs-agent"
-tag="0.1"
-image="${repo}/${image_name}:${tag}"
 dockerfile="torcs-agent/Dockerfile" 
+git_username=$(grep "name =" ../../.git/config | cut -d '=' -f2 | xargs)
+ghcr_name="ghcr.io"
+repo="${ghcr_name}/$(printf ${git_username} | tr '[:upper:]' '[:lower:]')"
+image_name="torcs-agent"
 arch=$(uname -m)
 
 if [[ -n $1 ]]; then
@@ -21,9 +21,12 @@ function buildImage() {
     eval $cmd
 }
 
+tag="0.1"
+image="${repo}/${image_name}:${tag}"
 buildImage
 
 if [[ "$action" -eq "push" ]]; then
-    echo $image
-    cmd="docker tag $image ${repo}/${image_name}:latest"
+    tag="latest"
+    image="${repo}/${image_name}:${tag}"
+    buildImage
 fi
