@@ -26,10 +26,12 @@ cmd="$runtime container run -id --name=$container"
 cmd="${cmd} -e PUID=1000 -e PGID=1000 -e TZ=Europe/Amsterdam -e TITLE=\"TINLAB Torcs Server\""
 cmd="${cmd} -e CUSTOM_HTTPS_PORT=$container_port_https -p ${host_port}:${container_port}"
 cmd="${cmd} -p ${host_port_https}:${container_port_https}"
-cmd="${cmd} -v ${PWD}/config:/config ${image}"
+cmd="${cmd} -v ${PWD}/config:/config"
 cmd="${cmd} -v ${PWD}/desktop:/config/Desktop"
 cmd="${cmd} -v ${PWD}/pics:/config/Pictures/"
 cmd="${cmd} -v ${PWD}/config:/logs"
+cmd="${cmd} ${image}"
+
 echo $cmd
 eval $cmd
 
