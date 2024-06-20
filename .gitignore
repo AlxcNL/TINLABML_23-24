@@ -188,6 +188,12 @@ groepsopdracht_final_torcs/torcs-client/torcs-agent/test/resources/drivelog-2016
 groepsopdracht_final_torcs/torcs-client/scr-client-cpp/*.o
 groepsopdracht_final_torcs/torcs-client/scr-client-cpp/client
 groepsopdracht_final_torcs/torcs-server/logs/torcs_server.log
+groepsopdracht_final_torcs/docker/ubuntu_mate/.config
+groepsopdracht_final_torcs/docker/ubuntu_mate/.local
+groepsopdracht_final_torcs/docker/ubuntu_mate/.dbus
+groepsopdracht_final_torcs/docker/ubuntu_mate/.XDG
+groepsopdracht_final_torcs/docker/ubuntu_mate/.ICEauthority
+groepsopdracht_final_torcs/docker/ubuntu_mate/ssl
 groepsopdracht_final_torcs/torcs-client/gym-torcs/gym
 groepsopdracht_final_torcs/champignonship/teams/06
 groepsopdracht_final_torcs/vagrant/*.box
