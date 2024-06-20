@@ -191,3 +191,6 @@ groepsopdracht_final_torcs/torcs-server/logs/torcs_server.log
 groepsopdracht_final_torcs/torcs-client/gym-torcs/gym
 groepsopdracht_final_torcs/champignonship/teams/06
 groepsopdracht_final_torcs/vagrant/*.box
+groepsopdracht_final_torcs/champignonship/teams
+groepsopdracht_final_torcs/champignonship/yaml/
+
