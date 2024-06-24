@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Author: J.A.Boogaard@hr.nl
 
-cmd="docker-compose -f champignonship.yaml up"
+composefile="champignonship_test.yaml"
+cmd="docker-compose -f ${composefile} up"
 echo $cmd
 eval $cmd
