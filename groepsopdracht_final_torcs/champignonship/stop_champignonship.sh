@@ -3,6 +3,7 @@
 
 container="torcs-server"
 
-cmd="docker-compose -f champignonship.yaml down"
+composefile="champignonship.yaml"
+cmd="docker-compose -f ${composefile} down"
 echo $cmd
 eval $cmd
