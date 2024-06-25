@@ -19,7 +19,7 @@
 	<attstr name="desc" val=""></attstr>
 	<attstr name="team" val=""></attstr>
 	<attstr name="author" val="Daniele Loiacono"></attstr>
-	<attstr name="car name" val="car1-trb1"></attstr>
+	<attstr name="car name" val="baja-bug"></attstr>
 	<attnum name="race number" val="1"></attnum>
 	<attnum name="red" val="1.0"></attnum>
 	<attnum name="green" val="1.0"></attnum>
@@ -37,18 +37,18 @@
 	<attnum name="blue" val="1.0"></attnum>
       </section>
       <section name="2">
-	<attstr name="name" val="Team 3"></attstr>
+	<attstr name="name" val="VredeStijn"></attstr>
 	<attstr name="desc" val=""></attstr>
 	<attstr name="team" val=""></attstr>
 	<attstr name="author" val="Daniele Loiacono"></attstr>
-	<attstr name="car name" val="car3-trb1"></attstr>
+	<attstr name="car name" val="pw-corollawrc"></attstr>
 	<attnum name="race number" val="3"></attnum>
 	<attnum name="red" val="1.0"></attnum>
 	<attnum name="green" val="1.0"></attnum>
 	<attnum name="blue" val="1.0"></attnum>
       </section>
       <section name="3">
-	<attstr name="name" val="Team 4"></attstr>
+	<attstr name="name" val="VroemAI"></attstr>
 	<attstr name="desc" val=""></attstr>
 	<attstr name="team" val=""></attstr>
 	<attstr name="author" val="Daniele Loiacono"></attstr>
@@ -59,18 +59,18 @@
 	<attnum name="blue" val="1.0"></attnum>
       </section>
       <section name="4">
-	<attstr name="name" val="Deadly Dragon"></attstr>
+	<attstr name="name" val="RowanTI"></attstr>
 	<attstr name="desc" val=""></attstr>
 	<attstr name="team" val=""></attstr>
 	<attstr name="author" val="Daniele Loiacono"></attstr>
-	<attstr name="car name" val="car5-trb1"></attstr>
+	<attstr name="car name" val="acura-nsx-sz"></attstr>
 	<attnum name="race number" val="5"></attnum>
 	<attnum name="red" val="1.0"></attnum>
 	<attnum name="green" val="1.0"></attnum>
 	<attnum name="blue" val="1.0"></attnum>
       </section>
       <section name="5">
-	<attstr name="name" val="Tux"></attstr>
+	<attstr name="name" val="Tux Racer"></attstr>
 	<attstr name="desc" val=""></attstr>
 	<attstr name="team" val=""></attstr>
 	<attstr name="author" val="Daniele Loiacono"></attstr>
@@ -81,11 +81,11 @@
 	<attnum name="blue" val="1.0"></attnum>
       </section>
       <section name="6">
-	<attstr name="name" val="Team 7"></attstr>
+	<attstr name="name" val="Matthino"></attstr>
 	<attstr name="desc" val=""></attstr>
 	<attstr name="team" val=""></attstr>
 	<attstr name="author" val="Daniele Loiacono"></attstr>
-	<attstr name="car name" val="car6-trb1"></attstr>
+	<attstr name="car name" val="pw-imprezawrc"></attstr>
 	<attnum name="race number" val="7"></attnum>
 	<attnum name="red" val="1.0"></attnum>
 	<attnum name="green" val="1.0"></attnum>
@@ -103,7 +103,7 @@
 	<attnum name="blue" val="1.0"></attnum>
       </section>
       <section name="8">
-	<attstr name="name" val="Team 9"></attstr>
+	<attstr name="name" val="BroodlieBradley"></attstr>
 	<attstr name="desc" val=""></attstr>
 	<attstr name="team" val=""></attstr>
 	<attstr name="author" val="Daniele Loiacono"></attstr>
@@ -114,7 +114,7 @@
 	<attnum name="blue" val="1.0"></attnum>
       </section>
       <section name="9">
-	<attstr name="name" val="Big Ben"></attstr>
+	<attstr name="name" val="BigBen"></attstr>
 	<attstr name="desc" val=""></attstr>
 	<attstr name="team" val=""></attstr>
 	<attstr name="author" val="Daniele Loiacono"></attstr>
