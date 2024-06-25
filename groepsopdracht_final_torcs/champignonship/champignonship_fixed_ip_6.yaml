@@ -1,0 +1,12 @@
+services:
+
+  torcs-agent6:
+    image: "ghcr.io/alxcnl/torcs-agent:3006"   
+    container_name: "team6"
+    environment:
+      - "TORCS-SERVER=192.168.1.141"
+    command:
+      - "--hostname"
+      - "TORCS-SERVER"
+    ports:
+      - "3006:3006"
