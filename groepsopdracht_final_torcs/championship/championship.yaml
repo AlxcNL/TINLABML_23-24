@@ -1,0 +1,143 @@
+services:
+
+  stekkerdoos:
+    image: "ghcr.io/alxcnl/torcs-agent:3001"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: "team1"
+    command:
+      - "--hostname"
+      - "host.docker.internal"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "3001:3001"
+
+  SSJ:
+    image: "ghcr.io/alxcnl/torcs-agent:3002"   
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: "team2"
+    environment:
+      - "torcs-server=host.docker.internal"
+    command:
+      - "--hostname"
+      - "host.docker.internal"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "3002:3002"
+
+
+  VredeStijn:
+    image: "ghcr.io/alxcnl/torcs-agent:3003"   
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: "team3"
+    command:
+      - "--hostname"
+      - "host.docker.internal"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "3003:3003"
+
+  VroemAI:
+    image: "ghcr.io/alxcnl/torcs-agent:3004"  
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: "team4"
+    command:
+      - "--hostname"
+      - "host.docker.internal"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "3004:3004"
+
+  RowanTI:
+    image: "ghcr.io/alxcnl/torcs-agent:3005"   
+    container_name: "team5"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command:
+      - "--hostname"
+      - "host.docker.internal"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "3005:3005"
+
+  TuxRacer:
+    image: "ghcr.io/alxcnl/torcs-agent:3006"   
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: "team6"
+    command:
+      - "--hostname"
+      - "host.docker.internal"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "3006:3006"
+
+  Matthino:
+    image: "ghcr.io/alxcnl/torcs-agent:3007"   
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: "team7"
+    command:
+      - "--hostname"
+      - "host.docker.internal"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "3007:3007"
+
+
+  2bias:
+    image: "ghcr.io/alxcnl/torcs-agent:3008"   
+    container_name: "team8"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command:
+      - "--hostname"
+      - "host.docker.internal"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "3008:3008"
+
+
+  BroodlieBradley:
+    image: "ghcr.io/alxcnl/torcs-agent:3009"   
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: "team9"
+    command:
+      - "--host"
+      - "host.docker.internal"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "3009:3009"
+
+  BigBen:
+    image: "ghcr.io/alxcnl/torcs-agent:3010"
+    container_name: "team10"
+    command:
+      - "--hostname"
+      - "host.docker.internal"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "3010:3010"      
