@@ -1,0 +1,14 @@
+services:
+
+  stekkerdoos:
+    image: "ghcr.io/alxcnl/torcs-agent:3001"   
+    container_name: "team1"
+    environment:
+      - "torcs-server=host.docker.internal"
+    command:
+      - "--hostname"
+      - "$torcs-server"
+    extra_hosts:
+      - "$torcs-server:host-gateway"
+    ports:
+      - "3001:3001"
