@@ -1,0 +1,15 @@
+services:
+
+  Champion2023:
+    image: ghcr.io/alxcnl/torcs-agent:00
+    container_name: "team0"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command:
+      - "--host"
+      - "host.docker.internal"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "3005:3005"      
