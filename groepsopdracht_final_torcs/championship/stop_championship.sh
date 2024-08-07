@@ -3,7 +3,7 @@
 
 container="torcs-server"
 
-composefile="champignonship.yaml"
+composefile="championship.yaml"
 cmd="docker-compose -f ${composefile} down"
 echo $cmd
 eval $cmd
